@@ -3,8 +3,6 @@ title: "About Amindu"
 description: "Learn more about Pawan, a passionate Computer Science student at the University of Kelaniya."
 ---
 
-# 👨‍💻 About Me
-
 import React from "react";
 
 export default function AboutMe() {
@@ -24,9 +22,8 @@ export default function AboutMe() {
       </div>
       </div>
       <p className="text-lg text-gray-400 mt-4">
-  <span className="font-semibold text-gray-300">Computer Science undergraduate</span> at the University of Kelaniya, specializing in <span className="font-semibold text-gray-300">Data Science</span>, with expertise in <span className="font-semibold text-gray-300">mobile application development</span> and <span className="font-semibold text-gray-300">full-stack development</span>. Experienced in building <span className="font-semibold text-gray-300">Flutter Apps</span> and developing scalable <span className="font-semibold text-gray-300">MERN stack</span> applications.
-</p>
-
+        <span className="font-semibold text-gray-300">Computer Science undergraduate</span> at the University of Kelaniya, specializing in <span className="font-semibold text-gray-300">Data Science</span>, with expertise in <span className="font-semibold text-gray-300">mobile application development</span> and <span className="font-semibold text-gray-300">full-stack development</span>. Experienced in building <span className="font-semibold text-gray-300">Flutter Apps</span> and developing scalable <span className="font-semibold text-gray-300">MERN stack</span> applications.
+      </p>
       <p className="mt-4 text-xl font-semibold text-pink-400">
         I’m always excited to explore new tech stacks and build innovative projects! 🚀
       </p>
@@ -34,7 +31,53 @@ export default function AboutMe() {
         💻 Let's collaborate and create something amazing together! 💡
       </p>
     <div className="w-full border-t-2 border-gray-700 my-6" />
-    
+      <div className="text-center mb-2">
+      <p className="text-2xl text-blue-300 font-semibold">Contact Me</p>
+      <div className="flex justify-center space-x-8 mt-6">
+        {/* Email */}
+        <a
+          href="mailto:waamidul@gmail.com"
+          className="flex items-center space-x-2 hover:text-blue-400 hover:scale-105 transition-all duration-300"
+        >
+          <img
+            src="https://img.icons8.com/ios-filled/50/FFFFFF/gmail.png"
+            alt="Email"
+            className="w-6 h-6 hover:scale-110 transition-all duration-300"
+          />
+          <span className="text-white hover:text-gray-200">waamidu@gmail.com</span>
+        </a>
+
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/in/amindu-bhashana"
+          target="_blank"
+          className="flex items-center space-x-2 hover:text-blue-400 hover:scale-105 transition-all duration-300"
+        >
+          <img
+            src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png"
+            alt="LinkedIn"
+            className="w-6 h-6 hover:scale-110 transition-all duration-300"
+          />
+          <span className="text-white hover:text-gray-200">LinkedIn</span>
+        </a>
+
+        {/* GitHub */}
+        <a
+          href="https://github.com/AminduBhashana"
+          target="_blank"
+          className="flex items-center space-x-2 hover:text-blue-400 hover:scale-105 transition-all duration-300"
+        >
+          <img
+            src="https://img.icons8.com/ios-filled/50/FFFFFF/github.png"
+            alt="GitHub"
+            className="w-6 h-6 hover:scale-110 transition-all duration-300"
+          />
+          <span className="text-white hover:text-gray-200">GitHub</span>
+        </a>
+      </div>
     </div>
+    <div className="w-full border-t-2 border-gray-700 my-6" />
+    
+  </div>
 );
 }
