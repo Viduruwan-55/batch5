@@ -4,8 +4,8 @@ const meta = {
     '---': {
         type: "separator",
     },
-    Pawan_Pinsara: "Pawan Pinsara",
     Amindu_Bhashana: "Amindu Bhashana",
+    Pawan_Pinsara: "Pawan Pinsara",
     Tharindu_Damruwan: "Tharindu Damruwan",
     Viduruwan: "Y.P. Viduruwan",
     Mihitha_Wanniarachchi: "Mihitha Wanniarachchi",
