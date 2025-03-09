@@ -3,100 +3,185 @@ title: "Pawan Perera's Profile"
 description: "Learn more about Pawan Perera, a passionate Computer Science student specializing in Artificial Intelligence at the University of Kelaniya."
 ---
 
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import avatar from './pawan.jpg';
+import { fadeInUp, stagger, scaleUp, rotate } from '../../../lib/utils';
 
-# 👨‍💻 Hi, I'm **Pawan Perera**!  
+# 👨‍💻 Hi, I'm **Pawan Perera**!
 
-<div style={{ display: "flex", justifyContent: "center", marginBottom: "2rem", marginTop: "1rem" }}>
-  <Image 
-    src={avatar} 
-    alt="Pawan Perera" 
-    width={200} 
-    height={200} 
-    style={{ 
-      borderRadius: "30%", 
-      border: "4px solid", 
-      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", 
-    }} 
-  />
-</div>
+<motion.div
+  initial="hidden"
+  animate="visible"
+  variants={stagger}
+  className="flex flex-col items-center my-8"
+>
+  {/* Avatar with Scale-Up Animation */}
+  <motion.div
+    variants={scaleUp}
+    className="mb-6"
+  >
+    <Image
+      src={avatar}
+      alt="Pawan Perera"
+      width={200}
+      height={200}
+      className="rounded-full border-4 border-blue-500 shadow-lg hover:shadow-xl transition-shadow duration-300"
+    />
+  </motion.div>
 
-I'm a **Computer Science** student at **University of Kelaniya**, specializing in **Artificial Intelligence**. I’m passionate about **AI, Machine Learning, and Web Development**, and I love working on projects that solve real-world problems.  
-
----
-
-## 🔧 Skills & Technologies  
-
-### **Programming Languages:**  
-- Python  
-- JavaScript  
-- Java  
-- C++  
-
-### **Web Development:**  
-- HTML, CSS, JavaScript  
-- React.js, Node.js, Express.js  
-- Next.js, Vue.js  
-
-### **AI & Data Science:**  
-- Machine Learning (TensorFlow, Scikit-learn)  
-- Data Visualization (Matplotlib, Seaborn)  
-- Databases: SQL, MongoDB  
-
-### **Tools:**  
-- Git & GitHub  
-- Docker  
-- VSCode, PyCharm  
+  {/* Intro Text with Fade-In Animation */}
+  <motion.span
+    variants={fadeInUp}
+    className="text-center text-lg max-w-2xl"
+  >
+    I'm a **Computer Science** student at **University of Kelaniya**, specializing in **Artificial Intelligence**. I’m passionate about **AI, Machine Learning, and Web Development**, and I love working on projects that solve real-world problems.
+  </motion.span>
+</motion.div>
 
 ---
 
-## 🎓 Education  
+## 🔧 Skills & Technologies
 
-- **BSc (Hons) in Computer Science (Specializing in Artificial Intelligence)**  
-  *University of Kelaniya* (2022 - Present)  
+<motion.div
+  initial="hidden"
+  animate="visible"
+  variants={stagger}
+  className="space-y-6"
+>
+  {/* Programming Languages */}
+  <motion.div variants={fadeInUp}>
+    <h3 className="text-xl font-bold text-blue-600">**Programming Languages:**</h3>
+    <ul className="list-disc list-inside ml-4">
+      <li>Python</li>
+      <li>JavaScript</li>
+      <li>Java</li>
+      <li>C++</li>
+    </ul>
+  </motion.div>
 
----
+  {/* Web Development */}
+  <motion.div variants={fadeInUp}>
+    <h3 className="text-xl font-bold text-blue-600">**Web Development:**</h3>
+    <ul className="list-disc list-inside ml-4">
+      <li>HTML, CSS, JavaScript</li>
+      <li>React.js, Node.js, Express.js</li>
+      <li>Next.js, Vue.js</li>
+    </ul>
+  </motion.div>
 
-## 🏆 Achievements  
-
-- **🏆 Champion, Intellihack 4.0**  
-  01. *Winner of Intellihack 4.0 organized by IEEE Computer Society UCSC*<br></br>
-  02. *Runners-up of Genesiz'24 organized by KDU Eric*
-
-- **📜 Certifications:**  
-  - [Certification 1]  
-  - [Certification 2]  
-  - [Certification 3]  
-
----
-
-## 🚀 Projects  
-
-Here are some of my key projects:  
-
-- **AI Chatbot for Customer Support** – *Developed a chatbot using NLP and TensorFlow to assist users with queries.*  
-- **E-Commerce Platform** – *Built a full-stack e-commerce platform using React.js, Node.js, and MongoDB.*  
-- [**Portfolio Website**](https://pawanperera.com/) – *Designed a personal portfolio to showcase my work and achievements.*  
-
----
-
-## 🌱 Current Interests  
-
-- Advancing my knowledge in **Artificial Intelligence & Deep Learning**  
-- Building scalable **web applications**  
-- Contributing to **open-source projects**  
-
----
-
-## 📬 Let's Connect!  
-
-Feel free to reach out if you'd like to collaborate or discuss tech topics!  
-
-- [LinkedIn](https://www.linkedin.com/in/pawan-perera)
-- [Portfolio](https://pawanperera.com/)
-- [GitHub](https://github.com/PinsaraPerera)  
+  {/* AI & Data Science */}
+  <motion.div variants={fadeInUp}>
+    <h3 className="text-xl font-bold text-blue-600">**AI & Data Science:**</h3>
+    <ul className="list-disc list-inside ml-4">
+      <li>Machine Learning (TensorFlow, Scikit-learn)</li>
+      <li>Data Visualization (Matplotlib, Seaborn)</li>
+      <li>Databases: SQL, MongoDB</li>
+    </ul>
+  </motion.div>
+</motion.div>
 
 ---
 
-**🔥Technology is the future. Let’s innovate together!🔥** 
+## 🎓 Education
+
+<motion.div
+  initial="hidden"
+  animate="visible"
+  variants={stagger}
+  className="space-y-4"
+>
+  <motion.div variants={fadeInUp}>
+    <h3 className="text-xl font-bold text-blue-600">**BSc (Hons) in Computer Science (Specializing in Artificial Intelligence)**</h3>
+    <p className="text-gray-600">*University of Kelaniya* (2022 - Present)</p>
+  </motion.div>
+</motion.div>
+
+---
+
+## 🏆 Achievements
+
+<motion.div
+  initial="hidden"
+  animate="visible"
+  variants={stagger}
+  className="space-y-4"
+>
+  <motion.div variants={fadeInUp}>
+    {/* <h3 className="text-xl font-bold text-blue-600">**🏆 Champion, Intellihack 4.0**</h3> */}
+    <ul className="list-disc list-inside ml-4">
+      <li>Winner of Intellihack 4.0 organized by IEEE Computer Society UCSC</li>
+      <li>Runners-up of Genesiz'24 organized by KDU Eric</li>
+    </ul>
+  </motion.div>
+</motion.div>
+
+---
+
+## 🚀 Projects
+
+<motion.div
+  initial="hidden"
+  animate="visible"
+  variants={stagger}
+  className="space-y-4"
+>
+  <motion.span variants={fadeInUp}>
+    Here are some of my key projects:
+  </motion.span>
+  <motion.ul variants={stagger} className="list-disc list-inside ml-4">
+    <motion.li variants={fadeInUp}>**AI Chatbot for Customer Support** – *Developed a chatbot using NLP and TensorFlow to assist users with queries.*</motion.li>
+    <motion.li variants={fadeInUp}>**E-Commerce Platform** – *Built a full-stack e-commerce platform using React.js, Node.js, and MongoDB.*</motion.li>
+    <motion.li variants={fadeInUp}>[**Portfolio Website**](https://pawanperera.com/) – *Designed a personal portfolio to showcase my work and achievements.*</motion.li>
+  </motion.ul>
+</motion.div>
+
+---
+
+## 📬 Let's Connect!
+
+<motion.div
+  initial="hidden"
+  animate="visible"
+  variants={stagger}
+  className="space-y-4"
+>
+  <motion.span variants={fadeInUp}>
+    Feel free to reach out if you'd like to collaborate or discuss tech topics!
+  </motion.span>
+  <motion.ul variants={stagger} className="list-disc list-inside ml-4">
+    <motion.li variants={fadeInUp}>
+      <a
+        href="https://www.linkedin.com/in/pawan-perera"
+        className="text-blue-600 hover:underline"
+        target="_blank"
+      >LinkedIn</a>
+    </motion.li>
+    <motion.li variants={fadeInUp}>
+      <a
+        href="https://pawanperera.com/"
+        className="text-blue-600 hover:underline"
+        target="_blank"
+      >Portfolio</a>
+    </motion.li>
+    <motion.li variants={fadeInUp}>
+      <a
+        href="https://github.com/PinsaraPerera"
+        className="text-blue-600 hover:underline"
+        target="_blank"
+      >GitHub</a>
+    </motion.li>
+  </motion.ul>
+</motion.div>
+
+
+---
+
+<motion.h2
+  variants={fadeInUp}
+  className="text-center mt-8 text-2xl font-bold text-blue-600"
+>
+  **🔥Technology is the future. Let’s innovate together!🔥**
+</motion.h2>
