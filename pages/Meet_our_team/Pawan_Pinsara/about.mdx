@@ -150,11 +150,30 @@ import { fadeInUp, stagger, scaleUp, rotate } from './utils';
     Feel free to reach out if you'd like to collaborate or discuss tech topics!
   </motion.span>
   <motion.ul variants={stagger} className="list-disc list-inside ml-4">
-    <motion.li variants={fadeInUp}>[LinkedIn](https://www.linkedin.com/in/pawan-perera)</motion.li>
-    <motion.li variants={fadeInUp}>[Portfolio](https://pawanperera.com/)</motion.li>
-    <motion.li variants={fadeInUp}>[GitHub](https://github.com/PinsaraPerera)</motion.li>
+    <motion.li variants={fadeInUp}>
+      <a
+        href="https://www.linkedin.com/in/pawan-perera"
+        className="text-blue-600 hover:underline"
+        target="_blank"
+      >LinkedIn</a>
+    </motion.li>
+    <motion.li variants={fadeInUp}>
+      <a
+        href="https://pawanperera.com/"
+        className="text-blue-600 hover:underline"
+        target="_blank"
+      >Portfolio</a>
+    </motion.li>
+    <motion.li variants={fadeInUp}>
+      <a
+        href="https://github.com/PinsaraPerera"
+        className="text-blue-600 hover:underline"
+        target="_blank"
+      >GitHub</a>
+    </motion.li>
   </motion.ul>
 </motion.div>
+
 
 ---
 
