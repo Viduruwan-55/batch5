@@ -1,0 +1,181 @@
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+
+export default function About() {
+  const [isClient, setIsClient] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+useEffect(() => {
+setIsClient(true);
+}, []);
+
+// Project data - define it once for reuse
+const projects = [
+{
+title: "Network Design & Simulation",
+description:
+"Designed and simulated a scalable enterprise network with VLANs, ACLs, and secure routing.",
+tech: "Cisco Packet Tracer, Networking, ACLs, VLANs, OSPF, RIP, Firewall Security",
+},
+{
+title: "Automated Server Hardening with Ansible",
+description:
+"Developed Ansible playbooks to automate security hardening on RHEL-based servers using CIS benchmarks.",
+tech: "Ansible, RHEL, Linux Security, CIS Benchmarks, Automation, Firewall Management",
+},
+{
+title: "Secure File Sharing System",
+description:
+"Developing an encrypted file-sharing platform with RBAC, MFA, and cloud integration.",
+tech: "Angular, NodeJS, AES Encryption, RBAC, Cloud Storage, Security Protocols",
+},
+{
+title: "Cybersecurity Awareness Platform",
+description:
+"Interactive security platform with quizzes & real-world cyber incident simulations.",
+tech: "ReactJS, Tailwind, NodeJS, ExpressJS, MongoDB",
+},
+];
+
+return (
+
+<div className="px-6 py-8">
+<motion.h1
+className="text-4xl font-bold text-center text-indigo-600"
+initial={{ opacity: 0, y: -20 }}
+animate={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.6 }} >
+👋 Hey, I'm Anjula Handapangoda!
+</motion.h1>
+
+      {isClient && (
+        <motion.p
+          className="mt-4 text-lg text-gray-400 text-center"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Passionate and detail-oriented Computer Science undergraduate specializing in Cybersecurity. Experienced Java developer with expertise in network security, system hardening, secure application development, and cloud security. Enthusiastic about DevSecOps, cryptography (including post-quantum), and cloud technologies.
+        </motion.p>
+      )}
+
+      <h2 className="mt-8 text-2xl font-semibold text-indigo-400">🎓 Education</h2>
+      <p className="mt-4 text-gray-400">University of Kelaniya, BSc. (Hons) in Computer Science (Specializing in Cyber Security) - CGPA: 3.36/4.0</p>
+      <p className="mt-2 text-gray-400">Taxila Central College - Physical Science Stream (G.C.E A/L) - Results: 3Bs (Z-Score: 1.518)</p>
+
+      <h2 className="mt-8 text-2xl font-semibold text-indigo-400">💡 Key Highlights</h2>
+      <ul className="mt-4 space-y-2 text-gray-400">
+        <li>✔️ Cisco-certified Ethical Hacker, Linux Essentials Certified, Comprehensive Master Java Developer Certified.</li>
+        <li>✔️ Developed SafeCyber, a cybersecurity awareness platform with interactive security training.</li>
+        <li>✔️ Implemented Secure OpenStack Cloud Deployment with IAM, network security, and hardening.</li>
+        <li>✔️ Passionate about cryptography research, including homomorphic encryption & post-quantum cryptography.</li>
+      </ul>
+
+      <h2 className="mt-8 text-2xl font-semibold text-indigo-400">🚀 Projects</h2>
+
+      {isClient && (
+        <div className="mt-8 overflow-hidden">
+          <div
+            className="relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <motion.div
+              className="flex space-x-6"
+              animate={!isPaused ? {
+                x: ["0%", "-100%"]
+              } : { x: "0%" }}
+              transition={{
+                duration: 16,
+                repeat: Infinity,
+                ease: "linear",
+                repeatType: "loop"
+              }}
+            >
+              {/* First set of cards */}
+              {projects.map((project, index) => (
+                <motion.div
+                  key={`original-${index}`}
+                  className="bg-transparent min-w-[300px] rounded-2xl p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 border border-gray-200"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <h3 className="text-xl font-semibold text-indigo-600">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-gray-400">{project.description}</p>
+                  <p className="mt-2 text-sm text-gray-500">
+                    <strong>Tech Stack:</strong> {project.tech}
+                  </p>
+                </motion.div>
+              ))}
+
+              {/* Duplicate the cards to create the circular effect */}
+              {projects.map((project, index) => (
+                <motion.div
+                  key={`duplicate-${index}`}
+                  className="bg-transparent min-w-[300px] rounded-2xl p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 border border-gray-200"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <h3 className="text-xl font-semibold text-indigo-600">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-gray-700">{project.description}</p>
+                  <p className="mt-2 text-sm text-gray-500">
+                    <strong>Tech Stack:</strong> {project.tech}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      )}
+
+      <h2 className="mt-8 text-2xl font-semibold text-indigo-400">🛠 Technologies & Tools</h2>
+      <ul className="mt-4 space-y-2 text-gray-400">
+        <li>🔹 Languages: C, Java, JavaScript, Python</li>
+        <li>🔹 Networking: Cisco Packet Tracer, IDS/IPS, VLANs, ACLs</li>
+        <li>🔹 Security Tools: Wireshark, Nmap, BurpSuite</li>
+        <li>🔹 Cloud & DevOps: AWS, Azure, OpenStack, Docker, Kubernetes, Git, Jenkins</li>
+        <li>🔹 Technologies: ReactJS, Angular, Spring Boot, Node.js, ExpressJS</li>
+        <li>🔹 Databases: MySQL, MongoDB</li>
+      </ul>
+
+      <h2 className="mt-8 text-2xl font-semibold text-indigo-400">📜 Certifications</h2>
+      <ul className="mt-4 space-y-2 text-gray-400">
+        <li>🎖 Linux Essentials Certification – Cisco</li>
+        <li>🎖 Cisco Verified Ethical Hacker – In Progress</li>
+        <li>🎖 Comprehensive Master Java Developer – Institute of Java Software Engineering</li>
+      </ul>
+
+      <h2 className="mt-8 text-2xl font-semibold text-indigo-400">🎤 Extracurricular Activities</h2>
+      <p className="mt-4 text-gray-400">
+        📺 YouTube Content Creator – Teaching Spring Boot & Backend Development.<br/>
+        🎓 Training & Development Officer @ ISACA UOK – Conducting cybersecurity awareness workshops.<br/>
+        🔓 Member @ University Free & Open Source Software Community – Engaging in open-source contributions.<br/>
+      </p>
+
+      <h2 className="mt-8 text-2xl font-semibold text-indigo-400">📫 Let's Connect!</h2>
+      {isClient && (
+        <div className="mt-4 flex space-x-4">
+          <motion.a
+            href="https://github.com/HAnjula"
+            className="px-4 py-2 rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            🏆 GitHub
+          </motion.a>
+          <motion.a
+            href="https://linkedin.com/in/anjula-handapangoda"
+            className="px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            🔗 LinkedIn
+          </motion.a>
+        </div>
+      )}
+    </div>
+
+);
+}
