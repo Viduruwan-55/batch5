@@ -5,6 +5,7 @@ const meta = {
         type: "separator",
     },
     Amindu_Bhashana: "Amindu Bhashana",
+    Anjula_Handapangoda: "Anjula Handapangoda",
     Pawan_Pinsara: "Pawan Pinsara",
     Tharindu_Damruwan: "Tharindu Damruwan",
     Viduruwan: "Y.P. Viduruwan",
