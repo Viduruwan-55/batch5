@@ -15,7 +15,8 @@ const meta = {
     Dilshana_Ranawake: "Dilshana Ranawake",
     Piyumi_Weerarathna: "Piyumi Weerarathna",
     Dehemi_Weerakoon: "Dehemi Weerakoon",
-    Chandima_Maduwantha: "Chandima Maduwantha"
+    Chandima_Maduwantha: "Chandima Maduwantha",
+    Lakith_Randula: "Lakith Randula"
 }
 
 export default meta;
